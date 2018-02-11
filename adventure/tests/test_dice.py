@@ -1,7 +1,18 @@
 #!/usr/bin/python
 
 import unittest
-from   dice import Dice, D6
+from   dice import Dice, D6, roll
+
+class ModuleTests( unittest.TestCase ):
+
+    def test_roll( self ):
+        rollResult = roll()
+        self.assertGreaterEqual( rollResult, 1 )
+        self.assertLessEqual( rollResult,    6 )
+        
+        rollResult = roll( dice = [ D6, D6 ] )
+        self.assertGreaterEqual( rollResult, 2 )
+        self.assertLessEqual( rollResult,   12 )
 
 class TestDice( unittest.TestCase ):
 
