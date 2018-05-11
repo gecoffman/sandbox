@@ -1,8 +1,7 @@
 #!/usr/bin/python
 
 import unittest
-from   dice import Dice, D6, roll
-
+from  adventure.dice import Dice, D6, roll
 class ModuleTests( unittest.TestCase ):
 
     def test_roll( self ):
